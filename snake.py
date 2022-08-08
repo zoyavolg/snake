@@ -17,7 +17,7 @@ class Snake:
 		self.color = color
 		self.dir = direction
 
-	def changeDir(self, key):
+	def change_dir(self, key):
 		if key[pg.K_s]:
 			self.dir = (0, 1)
 		elif key[pg.K_w]:
@@ -30,7 +30,7 @@ class Snake:
 	def move(self):
 		self.body.insert(0, (self.body[0][0] + self.dir[0], self.body[0][1] + self.dir[1]))
 
-	def isAte(self):
+	def is_ate(self):
 		return self.body[0][0] == food[0] and self.body[0][1] == food[1]
 
 	def draw(self):
@@ -47,13 +47,13 @@ def init():
 def change_all():
 	key = pg.key.get_pressed()
 	for sn in snake:
-		sn.changeDir(key)
+		sn.change_dir(key)
 
 	for sn in snake:
 		sn.move()
 
 	for sn in snake:
-		if not sn.isAte():
+		if not sn.is_ate():
 			sn.body.pop()
 
 
@@ -66,7 +66,7 @@ def draw_all():
 
 def key_down(key):
 	for sn in snake:
-		sn.changeDir(key)
+		sn.change_dir(key)
 
 
 def main():
