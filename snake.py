@@ -44,7 +44,7 @@ def init():
 #	snake.append(Snake(0, 2, pg.Color("red"), (1, 0)))
 
 
-def changeAll():
+def change_all():
 	key = pg.key.get_pressed()
 	for sn in snake:
 		sn.changeDir(key)
@@ -57,7 +57,7 @@ def changeAll():
 			sn.body.pop()
 
 
-def drawAll():
+def draw_all():
 	sc.fill("black")
 	for sn in snake:
 		sn.draw()
@@ -75,8 +75,8 @@ def main():
 
 	clock = pg.time.Clock()
 	while True:
-		changeAll()
-		drawAll()
+		change_all()
+		draw_all()
 		pg.display.update()
 		clock.tick(2)
 
